@@ -15,7 +15,7 @@ env:
   DOTNET_CORE_VERSION: 8.0.x
   WORKING_DIRECTORY: master-ugr.calculator.front-end/calculator.frontend
   TEST_PATH: master-ugr.calculator.front-end/tests/calculator.frontend.tests
-  CALCULATOR_FRONTEND_URL: https://master-ugr-ci-frontend-uat.azurewebsites.net
+  CALCULATOR_FRONTEND_URL: https://jbarrionuevo01-calculator-frontend-uat.azurewebsites.net
 jobs:
   build:
     runs-on: ubuntu-latest
