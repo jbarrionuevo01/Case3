@@ -9,7 +9,7 @@ on:
 
 env:
   # Environment variables for the workflow
-  AZURE_WEBAPP_NAME: master-ugr-ci-frontend-uat
+  AZURE_WEBAPP_NAME: jbarrionuevo01-calculator-frontend-uat
   AZURE_WEBAPP_PACKAGE_PATH: master-ugr.calculator.front-end/calculator.frontend/publish
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 8.0.x

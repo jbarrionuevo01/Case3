@@ -9,16 +9,16 @@ on:
 
 env:
     # Front-end Domain    
-    AZURE_WEBAPP_NAME_FRONTEND_UAT: master-ugr-ci-frontend-uat
-    AZURE_WEBAPP_NAME_FRONTEND_PROD: master-ugr-ci-frontend
+    AZURE_WEBAPP_NAME_FRONTEND_UAT: jbarrionuevo01-calculator-frontend-uat
+    AZURE_WEBAPP_NAME_FRONTEND_PROD: jbarrionuevo01-calculator-frontend
     AZURE_WEBAPP_PACKAGE_PATH_FRONTEND: master-ugr.calculator.front-end/calculator.frontend/publish
     WORKING_DIRECTORY_FRONTEND: master-ugr.calculator.front-end/calculator.frontend
     CALCULATOR_FRONTEND_URL_UAT: https://jbarrionuevo01-calculator-frontend-uat.azurewebsites.net
     TEST_PATH_FRONTEND: master-ugr.calculator.front-end/tests/calculator.frontend.tests
     CALCULATOR_FRONTEND_URL_PROD: https://jbarrionuevo01-calculator-frontend.azurewebsites.net
     # Back-end Domain
-    AZURE_WEBAPP_NAME_BACKEND_UAT: master-ugr-ci-backend-uat
-    AZURE_WEBAPP_NAME_BACKEND_PROD: master-ugr-ci-backend
+    AZURE_WEBAPP_NAME_BACKEND_UAT: jbarrionuevo01-calculator-backend-uat
+    AZURE_WEBAPP_NAME_BACKEND_PROD: jbarrionuevo01-calculator-backend
     AZURE_WEBAPP_PACKAGE_PATH_BACKEND: master-ugr.calculator.back-end/calculator.backend/publish
     WORKING_DIRECTORY_BACKEND: master-ugr.calculator.back-end/calculator.backend
     CALCULATOR_BACKEND_URL_UAT: https://jbarrionuevo01-calculator-backend-uat.azurewebsites.net/
