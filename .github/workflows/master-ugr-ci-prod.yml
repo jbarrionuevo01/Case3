@@ -15,7 +15,7 @@ env:
     WORKING_DIRECTORY_FRONTEND: master-ugr.calculator.front-end/calculator.frontend
     CALCULATOR_FRONTEND_URL_UAT: https://jbarrionuevo01-calculator-frontend-uat.azurewebsites.net
     TEST_PATH_FRONTEND: master-ugr.calculator.front-end/tests/calculator.frontend.tests
-    CALCULATOR_FRONTEND_URL_PROD: https://jbarrionuevo01-calculator-frontend.azurewebsites.net/
+    CALCULATOR_FRONTEND_URL_PROD: https://jbarrionuevo01-calculator-frontend.azurewebsites.net
     # Back-end Domain
     AZURE_WEBAPP_NAME_BACKEND_UAT: master-ugr-ci-backend-uat
     AZURE_WEBAPP_NAME_BACKEND_PROD: master-ugr-ci-backend
