@@ -24,12 +24,18 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
+        uses: github/codeql-action/init@v3
         with:
           languages: csharp
 
+      - name: Build the project
+        run: |
+          dotnet build master-ugr.calculator.back-end
+          dotnet build master-ugr.calculator.front-end
+          dotnet build master-ugr.calculator.lib
+
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
+        uses: github/codeql-action/analyze@v3
