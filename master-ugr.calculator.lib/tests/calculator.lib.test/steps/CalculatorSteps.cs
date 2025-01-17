@@ -38,7 +38,8 @@ namespace calculator.lib.test.steps
             _scenarioContext.Add("result", (double)result);
         }
         [When(@"I divide first number by second number")]
-        public void WhenIDivideFirstNumberBySecondNumber()
+		[When(@"I divide both numbers")]
+		public void WhenIDivideFirstNumberBySecondNumber()
         {
             var firstNumber = _scenarioContext.Get<int>("firstNumber");
             var secondNumber = _scenarioContext.Get<int>("secondNumber");
@@ -69,8 +70,16 @@ namespace calculator.lib.test.steps
         [Then(@"the result is (.*)")]
         public void ThenTheResultShouldBe(double expectedResult)
         {
-            var result = _scenarioContext.Get<double>("result");
-            Assert.Equal(result, expectedResult);
-        }
+			var result = _scenarioContext.Get<double>("result");
+
+			if (double.IsNaN(expectedResult))
+			{
+				Assert.True(double.IsNaN(result));
+			}
+			else
+			{
+				Assert.Equal(expectedResult, result);
+			}
+		}
     }
 }
