@@ -1,0 +1,25 @@
+version: 2
+updates:
+  - package-ecosystem: "nuget"
+    directory: "/master-ugr.calculator.back-end/"
+    schedule:
+      interval: "weekly"
+    target-branch: "backend"
+
+  - package-ecosystem: "nuget"
+    directory: "/master-ugr.calculator.front-end/"
+    schedule:
+      interval: "weekly"
+    target-branch: "frontend"
+
+  - package-ecosystem: "nuget"
+    directory: "/master-ugr.calculator.lib/"
+    schedule:
+      interval: "weekly"
+    target-branch: "lib"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "dev"
