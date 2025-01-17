@@ -143,7 +143,7 @@ jobs:
             name: webapp-backend
             path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_BACKEND }}
         - name: Deploy Back-End to Azure WebApp
-          uses: azure/webapps-deploy@v2
+          uses: azure/webapps-deploy@v3
           with:
               app-name: ${{ env.AZURE_WEBAPP_NAME_BACKEND_PROD }}
               package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_BACKEND }}
@@ -158,7 +158,7 @@ jobs:
             name: webapp-frontend
             path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_FRONTEND }}
         - name: Deploy Front-End to Azure WebApp
-          uses: azure/webapps-deploy@v2
+          uses: azure/webapps-deploy@v3
           with:
               app-name: ${{ env.AZURE_WEBAPP_NAME_FRONTEND_PROD }}
               package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH_FRONTEND }}
