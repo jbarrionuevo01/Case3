@@ -9,12 +9,12 @@ namespace calculator.frontend.Controllers
         {
             return View();
         }
-        // the base_url is obtained from environment variable
-        // CALCULATOR_BACKEND_URL. If it is not present, it uses
-        // "https://master-ugr-ci-backend-uat.azurewebsites.net";
-        private string base_url = 
-            Environment.GetEnvironmentVariable("CALCULATOR_BACKEND_URL") ?? 
-            "https://master-ugr-ci-backend-uat.azurewebsites.net";
+		// the base_url is obtained from environment variable
+		// CALCULATOR_BACKEND_URL. If it is not present, it uses
+		// "https://jbarrionuevo01-calculator-backend-uat.azurewebsites.net";
+		private string base_url = 
+            Environment.GetEnvironmentVariable("CALCULATOR_BACKEND_URL") ??
+			"https://jbarrionuevo01-calculator-backend-uat.azurewebsites.net";
         const string api = "api/Calculator";
         private double ExecuteOperation(string operation, double num1, double num2)
         {
