@@ -48,7 +48,7 @@ namespace calculator.lib.test.steps
 				var result = jsonDocument.RootElement.GetProperty("result");
 				if (result.ValueKind == JsonValueKind.Number)
 					_scenarioContext.Add("result", result.GetDouble());
-				else if (result.ValueKind == JsonValueKind.String)
+				else if (result.ValueKind == JsonValueKind.String && result.GetString() == "NaN")
 					_scenarioContext.Add("result", double.NaN);
 				else
 					throw new InvalidOperationException("Unexpected result format.");
