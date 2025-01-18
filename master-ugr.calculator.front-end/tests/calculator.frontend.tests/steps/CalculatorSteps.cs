@@ -61,7 +61,8 @@ namespace calculator.frontend.tests.steps
 
 
         [When(@"I divide first number by second number")]
-        public async Task WhenIDivideFirstNumberBySecondNumber()
+		[When(@"I divide both numbers")]
+		public async Task WhenIDivideFirstNumberBySecondNumber()
         {
             var page = (IPage)_scenarioContext["page"];
             await page.SelectOptionAsync("#operation", "Divide");
