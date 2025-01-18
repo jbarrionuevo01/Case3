@@ -43,7 +43,7 @@ namespace CalculatorAPI.Controllers
         }
 
         [HttpGet("number_attribute")]
-        public ActionResult NumberAttribute([FromQuery] int number)
+        public ActionResult<object> NumberAttribute([FromQuery] int number)
         {
             var is_prime = NumberAttributter.IsPrime(number);
             var is_odd = NumberAttributter.IsOdd(number);
