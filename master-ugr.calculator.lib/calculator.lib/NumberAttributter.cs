@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace calculator.lib
 {
@@ -29,5 +31,10 @@ namespace calculator.lib
         {
             return number % 2 != 0;
         }
+        public static double SquareRoot(int number)
+        {
+            return Math.Sqrt(number);
+        }
+
     }
 }
