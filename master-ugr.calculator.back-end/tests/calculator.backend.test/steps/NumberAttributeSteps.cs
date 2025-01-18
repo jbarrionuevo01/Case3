@@ -7,6 +7,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.CommonModels;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace calculator.lib.test.steps
@@ -35,8 +36,15 @@ namespace calculator.lib.test.steps
                 var jsonDocument = JsonDocument.Parse(responseBody);
                 var odd = jsonDocument.RootElement.GetProperty("odd").GetBoolean();
                 var prime = jsonDocument.RootElement.GetProperty("prime").GetBoolean();
+                var sqrt = jsonDocument.RootElement.GetProperty("squareRoot");
                 _scenarioContext.Add("isOdd", odd);
                 _scenarioContext.Add("isPrime", prime);
+
+                if (sqrt.ValueKind == JsonValueKind.Number)
+                    _scenarioContext.Add("squareRoot", sqrt.GetDouble());
+                else if (sqrt.ValueKind == JsonValueKind.String && sqrt.GetString() == "NaN")
+                       _scenarioContext.Add("squareRoot", double.NaN);
+                
             }
         }
 
@@ -52,6 +60,13 @@ namespace calculator.lib.test.steps
         {
             var isOdd = _scenarioContext.Get<bool>("isOdd");
             Assert.Equal(isOdd, isIt);
+        }
+
+        [Then(@"the result of square root is (.*)")]
+        public void ThenTheResultOfSqrtIs(double expected)
+        {
+            var sqrt = _scenarioContext.Get<double>("squareRoot");
+            Assert.Equal(sqrt, expected);
         }
     }
 }
