@@ -20,7 +20,8 @@ namespace calculator.frontend.Controllers
 			var result = new Dictionary<string, string>
 			{
 				{ "IsPrime", "unknown" },
-				{ "IsOdd", "unknown" }
+				{ "IsOdd", "unknown" },
+				{ "squareRoot", "unknown" }
 			};
 
 			try
@@ -47,9 +48,11 @@ namespace calculator.frontend.Controllers
 
 					var raw_prime = json["prime"]?.Value<bool>();
 					var raw_odd = json["odd"]?.Value<bool>();
+					var raw_square = json["squareRoot"]?.Value<double>();
 
 					result["IsPrime"] = raw_prime.HasValue ? (raw_prime.Value ? "Yes" : "No") : "unknown";
 					result["IsOdd"] = raw_odd.HasValue ? (raw_odd.Value ? "Yes" : "No") : "unknown";
+					result["squareRoot"] = raw_square.HasValue ? raw_square.Value.ToString() : "unknown";
 				}
 			}
 			catch (HttpRequestException ex)
@@ -78,11 +81,13 @@ namespace calculator.frontend.Controllers
 				ViewBag.Error = result["Error"];
 				ViewBag.IsPrime = "unknown";
 				ViewBag.IsOdd = "unknown";
+				ViewBag.Sqrt = "unknown";
 			}
 			else
 			{
 				ViewBag.IsPrime = result["IsPrime"];
 				ViewBag.IsOdd = result["IsOdd"];
+				ViewBag.Sqrt = result["squareRoot"];
 			}
 
 			return View();
